@@ -1,0 +1,11 @@
+:~
+title+'Urbit Go'
+info+'The abstract board-game Go, now on Urbit'
+color+0xd3.7504
+image+'https://winnermittec.space/icon.svg'
+base+'urbit-go'
+glob-ames+[~zod 0v0]
+version+[0 0 1]
+website+'https://winnermittec.space'
+license+'GPLv3'
+==
