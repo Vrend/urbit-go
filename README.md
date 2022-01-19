@@ -27,7 +27,7 @@ Then run `|commit %urbit-go` and finally `|install our %urbit-go`
 It will ask for a glob file. Navigate to http://127.0.0.1:8080/docket/upload (or wherever you host your fakezod). Then select 'urbit-go'
 as the app, and upload the 'urbit-go-glob' folder in this repository. If all goes well, you'll have a 'working' install.
 
-**Note:** If you are not running this on a fakezod, you will need to update desk.docket-0 glob-ames and also desk.ship to the name of your ship
+**Note:** If you are not running this on a fakezod, you will need to update desk.docket-0 glob-ames to the name of your ship
 
 ## Progress
 
