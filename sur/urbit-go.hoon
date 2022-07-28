@@ -111,4 +111,48 @@
   ^-  board
   =|  output=(map (pair @ud @ud) piece)
   [n output]
+::
+:: I'm putting JSON conversion code here, sue me
+++  board-to-json
+  |=  b=board
+  ^-  json
+  =/  listified-board=(list [[@ud @ud] piece])  ~(tap by m.b) :: Turn map into list of key-value pairs
+  =/  jsonified-board
+     %+  turn :: run the following gate over every key-value pair
+       listified-board
+     |=  pos=[[@ud @ud] piece]
+     [(crip ;:(weld (scow %ud +2:+2:pos) " " (scow %ud +3:+2:pos))) s+`@t`+3:pos] :: take each key-value pair and turn it into json [1 2] --> "1 2"
+  (pairs:enjs:format ~[['n' (numb:enjs:format n.b)] ['m' (pairs:enjs:format jsonified-board)]]) :: recreate board structure as json
+::
+++  history-to-json
+  |=  hist=(list board)
+  ^-  json
+  :-  %a
+  (turn hist board-to-json)
+::
+++  result-to-json
+  |=  unit-result=(unit game-result)
+  ^-  json
+  ?~  (drop unit-result)  ~
+  =/  g-result=game-result  (need unit-result)
+  %-  pairs:enjs:format
+  :~  ['black-score' [%s (scot %rs black-score.g-result)]]
+      ['white-score' [%s (scot %rs white-score.g-result)]]
+      ['result' ?~(result.g-result ~ (ship:enjs:format (need result.g-result)))]
+  ==
+::
+++  dead-stones-to-json
+  |=  unit-dead-stones=(unit [@p (set (pair @ud @ud))])
+  ^-  json
+  ?~  (drop unit-dead-stones)  ~
+  =/  dead-stones=(list json)
+    %+  turn
+      ~(tap in +3:(need unit-dead-stones))
+    |=  pos=[@ud @ud]
+    s+(crip ;:(weld (scow %ud +2:pos) " " (scow %ud +3:pos)))
+  %-  pairs:enjs:format
+  :~
+    ['ship' (ship:enjs:format +2:(need unit-dead-stones))]
+    ['stones' [%a dead-stones]]
+  ==
 --
