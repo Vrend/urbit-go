@@ -348,7 +348,7 @@
   game :: return
 ::
 ++  determine-turn-order :: takes in the order (%random %challenger %challenged) and players, and returns a cell of [first second]
-  |=  [order=@ta challenger=@p challenged=@p seed=@]
+  |=  [order=@tas challenger=@p challenged=@p seed=@]
   ^-  [@p @p] :: return order
   ?+  order  [challenger challenged] :: by default challenger goes first
     %random

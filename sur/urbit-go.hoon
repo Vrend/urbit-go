@@ -48,7 +48,7 @@
     komi=@rs
     handicap=@ud
     board-size=@ud
-    goes-first=@ta
+    goes-first=@tas
   ==
 ::
 +$  game-result
@@ -133,23 +133,23 @@
 ++  result-to-json
   |=  unit-result=(unit game-result)
   ^-  json
-  ?~  (drop unit-result)  ~
-  =/  g-result=game-result  (need unit-result)
+  ?~  (drop unit-result)  ~ :: if it's null, return null
+  =/  g-result=game-result  (need unit-result):: otherwise unpack it from a unit
   %-  pairs:enjs:format
   :~  ['black-score' [%s (scot %rs black-score.g-result)]]
       ['white-score' [%s (scot %rs white-score.g-result)]]
-      ['result' ?~(result.g-result ~ (ship:enjs:format (need result.g-result)))]
+      ['result' ?~(result.g-result ~ (ship:enjs:format (need result.g-result)))] :: if the result isn't null, return the ship otherwise return null
   ==
 ::
 ++  dead-stones-to-json
   |=  unit-dead-stones=(unit [@p (set (pair @ud @ud))])
   ^-  json
-  ?~  (drop unit-dead-stones)  ~
+  ?~  (drop unit-dead-stones)  ~ :: if null, return null
   =/  dead-stones=(list json)
     %+  turn
-      ~(tap in +3:(need unit-dead-stones))
+      ~(tap in +3:(need unit-dead-stones)) :: convert set to list and run gate below
     |=  pos=[@ud @ud]
-    s+(crip ;:(weld (scow %ud +2:pos) " " (scow %ud +3:pos)))
+    s+(crip ;:(weld (scow %ud +2:pos) " " (scow %ud +3:pos))) :: return a chord made up of both @ud's separated by a space
   %-  pairs:enjs:format
   :~
     ['ship' (ship:enjs:format +2:(need unit-dead-stones))]

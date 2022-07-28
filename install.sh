@@ -55,6 +55,7 @@ else
 	rsync ./sur/urbit-go.hoon $directory/urbit-go/sur
 	rsync ./mar/urbit-go-action.hoon $directory/urbit-go/mar
 	rsync ./mar/urbit-go-game.hoon $directory/urbit-go/mar
+	rsync ./mar/urbit-go-challenge.hoon $directory/urbit-go/mar
 	cp ./desk.bill $directory/urbit-go
 	cp ./desk.docket-0 $directory/urbit-go
 	cp ./desk.ship $directory/urbit-go
