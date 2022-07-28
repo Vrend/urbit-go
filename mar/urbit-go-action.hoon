@@ -14,7 +14,12 @@
         :-  %challenge
         %.  jon
         %-  ot:dejs
-        :~
+        :~  [%name so:dejs]
+            [%who (se:dejs %p)]
+            [%komi (se:dejs %rs)]
+            [%handicap ni:dejs]
+            [%size ni:dejs]
+            [%order (se:dejs %ta)]
         ==
       %accept-challenge
         :-  %accept-challenge
@@ -38,7 +43,7 @@
         :-  %resign
         %.  jon
         %-  ot:dejs
-        :~  [%id  (se:dejs %da)]
+        :~  [%id (se:dejs %da)]
         ==
       %move
         :::-  %move
@@ -49,7 +54,7 @@
               [%position (sa:dejs)]
           ==
         =/  coord=tape  +3:pre-move
-        =|  index=@ud  (find " " coord)
+        =/  index=@ud  (find " " coord)
         =/  c1=tape  (scag index coord)
         =/  c2=tape  (slag +(index) coord)
         :-  %move
@@ -60,6 +65,7 @@
         %-  ot:dejs
         :~  [%id (se:dejs %da)]
         ==
+    ==
   --
 ++  grow
   |%

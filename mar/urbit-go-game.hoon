@@ -17,13 +17,13 @@
         ['black' (ship:enjs black)]
         ['white' (ship:enjs white)]
         ['turn' (numb:enjs turn)]
-        ['history' (history-to-json history)]
-        ['game-board' (board-to-json game-board)]
+        ['history' (history-to-json:urbit-go history)]
+        ['game-board' (board-to-json:urbit-go game-board)]
         ['komi' [%s (scot %rs komi)]]
         ['handicap' (numb:enjs handicap)]
         ['pass' (numb:enjs pass)]
-        ['result' (result-to-json result)]
-        ['dead-stones' (dead-stones-to-json dead-stones)]
+        ['result' (result-to-json:urbit-go result)]
+        ['dead-stones' (dead-stones-to-json:urbit-go dead-stones)]
     ==
   --
 ++  grad  %noun
