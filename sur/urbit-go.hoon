@@ -94,7 +94,7 @@
   ==
 ::
 +$  go-action
-  $%  [%challenge name=@t who=ship komi=@rs handicap=@ud size=@ud order=@ta] :: challenge another ship
+  $%  [%challenge name=@t who=ship komi=@rs handicap=@ud size=@ud order=@tas] :: challenge another ship
       [%send-challenge challenge=go-challenge] :: emitted by agents to send a challenge to a participant
       [%accept-challenge who=ship] :: Accept the challenge sent by who
       [%decline-challenge who=ship] :: Decline the challenge sent by who
@@ -155,4 +155,22 @@
     ['ship' (ship:enjs:format +2:(need unit-dead-stones))]
     ['stones' [%a dead-stones]]
   ==
+::
+++  move-from-json
+|=  coord=tape
+=/  index=@ud  (need (find " " coord))
+[(slav %ud (crip (scag index coord))) (slav %ud (crip (slag +(index) coord)))]
+::
+++  dead-stones-from-json
+  |=  stones=(list tape)
+  ^-  (set (pair @ud @ud))
+  =/  stones-decoded=(list (pair @ud @ud))
+    %+  turn
+      stones
+    |=  coord=tape
+    ^-  (pair @ud @ud)
+    =/  index=@ud  (need (find " " coord))
+    [(slav %ud (crip (scag index coord))) (slav %ud (crip (slag +(index) coord)))]
+  (silt stones-decoded)
+
 --
