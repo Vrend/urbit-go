@@ -263,7 +263,9 @@
     [%x %challenges ~]
     =|  our-challenges=(list go-challenge)
     |-
-    ?~  challenges  ``noun+!>(`(list go-challenge)`our-challenges)
+    ?~  challenges
+      :^  ~  ~  %urbit-go-challenges
+      !>(`(list go-challenge)`our-challenges)
     ?:  ?|(=(src.bowl challenger.i.challenges) =(src.bowl challenged.i.challenges))
       $(challenges t.challenges, our-challenges (weld ~[i.challenges] our-challenges))
     $(challenges t.challenges)

@@ -113,6 +113,20 @@
   [n output]
 ::
 :: I'm putting JSON conversion code here, sue me
+++  challenge-to-json
+  |=  gc=go-challenge
+  ^-  json
+  %-  pairs:enjs:format
+  :~  ['name' [%s name:gc]]
+      ['game-id' (sect:enjs:format game-id:gc)]
+      ['challenger' (ship:enjs:format challenger:gc)]
+      ['challenged' (ship:enjs:format challenged:gc)]
+      ['komi' [%s (scot %rs komi:gc)]]
+      ['handicap' (numb:enjs:format handicap:gc)]
+      ['board-size' (numb:enjs:format board-size:gc)]
+      ['goes-first' [%s goes-first:gc]]
+  ==
+::
 ++  board-to-json
   |=  b=board
   ^-  json
