@@ -223,7 +223,7 @@
     =/  game-id=@dau  (slav %da i.t.t.path)
     ?:  (~(has by active-games) game-id) :: game exists - either this ship is subscribing for the first time or either player got kicked due to networking
       =/  game=go-game  (~(got by active-games) game-id) :: retrieve game
-      ?>  (check-in-game game src.bowl) :: subscriber must be either black or white (IE in the game)
+      :: ?>  (check-in-game game src.bowl) :: subscriber must be either black or white (IE in the game) LINE NOT NEEDED AS FRONTEND NEEDS TO SUBSCRIBE
       :_  this
       :~  [%give %fact ~ %urbit-go-game !>(game)] :: give the current game state
       ==
@@ -296,11 +296,14 @@
         =/  game=go-game  !<(go-game q.cage.sign)
         ?~  result.game :: if the result isn't decided: game still going
           =.  active-games  (~(put by active-games) game-id.game game) :: add/update game to active games
-          `this
+          :_  this
+          :~  [%give %fact ~[/game/active/(scot %dau game-id.game)] %urbit-go-game !>(game)] :: give the current game state
+          ==
         =.  archived-games  (~(put by archived-games) game-id.game game) :: add game to archive
         =.  active-games  (~(del by active-games) game-id.game) :: removes game from active-games
         :_  this
         :~  [%pass /game/active/(scot %dau game-id.game)/wire %agent [host.game %urbit-go] %leave ~]
+            [%give %kick ~[/game/active/(scot %dau game-id.game)] ~]
         ==
       ==
       %kick
