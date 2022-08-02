@@ -118,13 +118,32 @@
   ^-  json
   %-  pairs:enjs:format
   :~  ['name' [%s name:gc]]
-      ['game-id' (sect:enjs:format game-id:gc)]
+      ['game-id' [%s (scot %da game-id:gc)]]
       ['challenger' (ship:enjs:format challenger:gc)]
       ['challenged' (ship:enjs:format challenged:gc)]
       ['komi' [%s (scot %rs komi:gc)]]
       ['handicap' (numb:enjs:format handicap:gc)]
       ['board-size' (numb:enjs:format board-size:gc)]
       ['goes-first' [%s goes-first:gc]]
+  ==
+::
+++  game-to-json
+  |=  game=go-game
+  ^-  json
+  %-  pairs:enjs:format
+  :~  ['game-id' [%s (scot %da game-id.game)]]
+      ['name' [%s name.game]]
+      ['host' (ship:enjs:format host.game)]
+      ['black' (ship:enjs:format black.game)]
+      ['white' (ship:enjs:format white.game)]
+      ['turn' (numb:enjs:format turn.game)]
+      ['history' (history-to-json history.game)]
+      ['game-board' (board-to-json game-board.game)]
+      ['komi' [%s (scot %rs komi.game)]]
+      ['handicap' (numb:enjs:format handicap.game)]
+      ['pass' (numb:enjs:format pass.game)]
+      ['result' (result-to-json result.game)]
+      ['dead-stones' (dead-stones-to-json dead-stones.game)]
   ==
 ::
 ++  board-to-json

@@ -269,6 +269,10 @@
     ?:  ?|(=(src.bowl challenger.i.challenges) =(src.bowl challenged.i.challenges))
       $(challenges t.challenges, our-challenges (weld ~[i.challenges] our-challenges))
     $(challenges t.challenges)
+    [%x %active-games ~]
+    =|  our-games=(list go-game)
+    :^  ~  ~  %urbit-go-games
+    !>(`(list go-game)`~(val by active-games))
   ==
 ++  on-agent
   |=  [=wire =sign:agent:gall]
