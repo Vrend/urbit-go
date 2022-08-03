@@ -259,7 +259,7 @@
       =/  ogame=(unit go-game)  (~(get by archived-games) game-id) :: Check if ID in archived games
       ?~  ogame  [~ ~] :: Not a valid ID
       :^  ~  ~  %urbit-go-game
-      !>(`go-game`(need game))
+      !>(`go-game`(need ogame))
     :^  ~  ~  %urbit-go-game
     !>(`go-game`(need game))
     [%x %challenges ~]
