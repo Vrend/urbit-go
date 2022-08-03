@@ -275,6 +275,10 @@
     =|  our-games=(list go-game)
     :^  ~  ~  %urbit-go-games
     !>(`(list go-game)`~(val by active-games))
+    [%x %archived-games ~]
+    =|  our-games=(list go-game)
+    :^  ~  ~  %urbit-go-games
+    !>(`(list go-game)`~(val by archived-games))
   ==
 ++  on-agent
   |=  [=wire =sign:agent:gall]

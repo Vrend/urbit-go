@@ -11,7 +11,7 @@
   ++  json
     =+  act
     %+  frond:enjs
-      'active-games'
+      'games'
     a+(turn act game-to-json:urbit-go)
   --
 ++  grad  %noun
