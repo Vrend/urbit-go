@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/apps/urbit-go/static/css/main.0cdc3030.css",
-    "main.js": "/apps/urbit-go/static/js/main.737bc9fb.js",
+    "main.js": "/apps/urbit-go/static/js/main.3deacf87.js",
     "index.html": "/apps/urbit-go/index.html",
     "main.0cdc3030.css.map": "/apps/urbit-go/static/css/main.0cdc3030.css.map",
-    "main.737bc9fb.js.map": "/apps/urbit-go/static/js/main.737bc9fb.js.map"
+    "main.3deacf87.js.map": "/apps/urbit-go/static/js/main.3deacf87.js.map"
   },
   "entrypoints": [
     "static/css/main.0cdc3030.css",
-    "static/js/main.737bc9fb.js"
+    "static/js/main.3deacf87.js"
   ]
 }
