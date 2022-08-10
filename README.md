@@ -1,5 +1,5 @@
 # urbit-go
-The abstract board-game Go, now on Urbit (Work in Progress!)
+The abstract board-game Go, now on Urbit
 
 ## Installation
 
@@ -25,15 +25,15 @@ Run the install script `install.sh` to copy files from the repository to your pi
 Then run `|commit %urbit-go` and finally `|install our %urbit-go`
 
 It will ask for a glob file. Navigate to http://127.0.0.1:8080/docket/upload (or wherever you host your fakezod). Then select 'urbit-go'
-as the app, and upload the 'urbit-go-glob' folder in this repository. If all goes well, you'll have a 'working' install.
+as the app, and upload the 'urbit-go-glob' folder in this repository. If all goes well, you'll have a working install.
 
 **Note:** If you are not running this on a fakezod, you will need to update desk.docket-0 glob-ames to the name of your ship
 
 ## Progress
 
-The MVP of the backend has been completed
+The MVP has been completed
 
-The Front-end is being implemented [here](https://github.com/Vrend/urbit-go-frontend)
+The Front-end repository is [here](https://github.com/Vrend/urbit-go-frontend), but has been built into the glob folder of this repository.
 
 ## Contributing
 
@@ -55,4 +55,4 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-*Copyright (C) 2021 Vrend*
+*Copyright (C) 2022 Vrend*
