@@ -1,9 +1,11 @@
 # urbit-go
 The abstract board-game Go, now on Urbit
 
-## Installation
+## Installation (at your own risk fyi)
 
-As this is a work in progress, I do not recommend installing this on anything other than a fake-ship.
+The app is available from [~disreb-winner-mittec](web+urbitgraph://~disreb-winner-mittec/urbit-go)
+
+## Building
 
 Begin by spinning up a fakezod
 
