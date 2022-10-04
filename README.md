@@ -1,9 +1,9 @@
 # urbit-go
 The abstract board-game Go, now on Urbit
 
-## Installation (at your own risk fyi)
+## Installation
 
-The app is available from [~disreb-winner-mittec](web+urbitgraph://~disreb-winner-mittec/urbit-go)
+The app is available from [~disreb-winner-mittec/urbit-go](web+urbitgraph://~disreb-winner-mittec/urbit-go)
 
 ## Building
 
@@ -33,7 +33,7 @@ as the app, and upload the 'urbit-go-glob' folder in this repository. If all goe
 
 ## Progress
 
-The MVP has been completed
+The app works, notifications coming soon(tm)
 
 The Front-end repository is [here](https://github.com/Vrend/urbit-go-frontend), but has been built into the glob folder of this repository.
 
