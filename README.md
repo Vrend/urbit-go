@@ -10,15 +10,18 @@ The app is available from [~disreb-winner-mittec/urbit-go](web+urbitgraph://~dis
 Begin by spinning up a fakezod
 
 You will need to clone the urbit repository from github here: https://github.com/urbit/urbit
+You will also need to clone the landscape repository from github here: https://github.com/tloncorp/landscape
 
 For the sake of this installation, this cloned repo is referred to as 'urbit-git'
 
 ### Creating the base desk
 
-In your fakezod, create the skeleton desk by running `|merge %urbit-go our %base` and `|mount %urbit-go`
+1. In your fakezod, create the skeleton desk by running `|merge %urbit-go our %base` and `|mount %urbit-go`
 
-Once that is done, on the unix side, navigate to your pier and delete the contents on the 'urbit-go' folder. Then copy the contents of
-base-dev and garden-dev in urbit-git/pkg to the now-empty urbit-go folder. Create an app/ and gen/ folder as well.
+2. On the unix side, navigate to your pier and delete the contents on the 'urbit-go' folder
+3. Copy the contents of base-dev in urbit-git/pkg to the now-empty urbit-go folder in your fakezod
+4. Copy the contents of desk-dev in landscape-git to the urbit-go folder in your fakezod
+5. Create an app/ and gen/ folder
 
 ### Adding gall files
 
@@ -57,4 +60,4 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-*Copyright (C) 2022 Vrend*
+*Copyright (C) 2023 Vrend*

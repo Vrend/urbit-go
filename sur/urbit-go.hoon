@@ -1,4 +1,4 @@
-:: Copyright (C) 2021 Vrend
+:: Copyright (C) 2023 Vrend
 ::
 :: This file is part of urbit-go.
 ::
